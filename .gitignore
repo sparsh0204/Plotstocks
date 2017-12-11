@@ -1,0 +1,13 @@
+.env
+venv/
+*.*~
+*.pyc
+.directory
+.idea
+templates/stocks/index.js
+templates/stocks/new.txt
+templates/stocks/symbols.txt
+templates/stocks/symbolss.txt
+templates/stocks/test.html
+templates/stocks/view_graph.html
+stocks/try.py
