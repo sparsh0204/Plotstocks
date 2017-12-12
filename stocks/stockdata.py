@@ -1,12 +1,20 @@
 from nsepy import get_history
 from datetime import date
 import pandas as pd
+import datetime
 
 
-def get_stock_data(symbols):
+def get_stock_data(symbols, start_date, end_date):
+    start = datetime.datetime.strptime(start_date, "%Y-%m-%d").date()
+    end = datetime.datetime.strptime(end_date, "%Y-%m-%d").date()
+#    datetime.date(2010, 5, 24)
+#    df = get_history(symbol=symbols,
+#                   start=date(2015,1,1),
+#                   end=date(2016,1,10))
+#    print(date(2015,1,1))
     df = get_history(symbol=symbols,
-                   start=date(2015,1,1),
-                   end=date(2016,1,10))
+                   start=start,
+                   end=end)
     df['Date'] = pd.to_datetime(df.index)
     #print(df['Date'].dt.strftime('%Y-%m-%d').tolist())
     #df['Date']=df.index
