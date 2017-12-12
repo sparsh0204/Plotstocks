@@ -14,7 +14,7 @@ def get_stock_data(symbols, start_date, end_date):
                    end=end)
     df['Date'] = pd.to_datetime(df.index)
 
-    return df[['Date','Open']]
+    return df[['Date','Open','Close','High','Low']]
 
 
 
