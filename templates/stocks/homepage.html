@@ -8,25 +8,13 @@
     <meta name="author" content="">
     <title>Starter Template for Bootstrap</title>
 
-    <!-- Bootstrap core CSS -->
+    {% load staticfiles %}
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <style>
-        body {
-            padding-top: 50px;
-        }
 
-        .starter-template {
-            padding: 40px 15px;
-            text-align: center;
-        }
-    </style>
-
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="index.js"></script>
-
+    <script src="{% static 'script/jquery/autocomplete_input.js' %}"></script>
 
 
 </head>

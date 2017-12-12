@@ -1,5 +1,5 @@
-$.ajax({
-    url: "symbolss.txt",
+$(document).ready(function() {$.ajax({
+    url: "http://127.0.0.1:8000/static/script/jquery/symbolss.txt",
     dataType: "JSON",
     success: function(data) {
         var autoCompleteData = data;
@@ -10,4 +10,5 @@ $.ajax({
             }
         });
     }
+});
 });
