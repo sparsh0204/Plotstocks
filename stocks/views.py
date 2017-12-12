@@ -15,36 +15,20 @@ def index(request):
         symbol = request.POST['symbol']
         start_date = request.POST['start_date']
         end_date = request.POST['end_date']
-
-#        print(symbol)
-        data_list = []
-        data_list.append(symbol)
-        data_list.append(start_date)
-        data_list.append(end_date)
-
-        return graph_view(request, data_list)
-#        return redirect(reverse('graph_view') + '?smb=%s' % symbol + '?sd=%s' % start_date + '?ed=%s' % end_date)
+        return redirect(reverse('graph_view') + '?smb=%s&sd=%s&ed=%s' % (symbol,start_date,end_date))
 
     else:
         pass
 
 
-def graph_view(request,data_list):
-#    symbol = request.GET.get('smb', None)
-    symbol = data_list[0]
-    start_date = data_list[1]
-    end_date = data_list[2]
-#    start_date = request.GET.get('sd', None)
-#    end_date = request.GET.get('ed', None)
-#    print(start_date)
-#    print(end_date)
-#    print(symbol)
+def graph_view(request):
+    end_date = request.GET.get('ed', None)
+    start_date = request.GET.get('sd', None)
+    symbol = request.GET.get('smb', None)
+
     df = stockdata.get_stock_data(symbol, start_date, end_date)
     plot = plotstockdata.plot_graph(df,symbol)
     script, div = components(plot)
-    #print(script,div)
-
-    #return render(request,'stocks/view_graph.html',{'symbol':symbol,'script' : script , 'div' : div})
     return render(request,'stocks/graph_view.html',{'symbol':symbol,'script' : script , 'div' : div})
 
 

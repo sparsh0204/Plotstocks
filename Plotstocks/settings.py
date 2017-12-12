@@ -144,4 +144,4 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 # ACCOUNT_LOGOUT_REDIRECT_URL = 'account_login'
 # ACCOUNT_LOGOUT_ON_GET = True
 # LOGIN_URL = 'account_login'
-# DATE_INPUT_FORMATS = ('%d-%m-%Y')
+DATE_INPUT_FORMATS = ('%Y-%m-%d')
