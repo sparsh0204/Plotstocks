@@ -10,4 +10,7 @@ templates/stocks/symbols.txt
 templates/stocks/symbolss.txt
 templates/stocks/test.html
 templates/stocks/view_graph.html
+templates/stocks/index1.js
 stocks/try.py
+stocks/symbols.txt
+stocks/symbolss.txt
